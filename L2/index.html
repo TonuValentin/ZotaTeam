@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentin's Portofolio</title>
+    <style>
+
+        * {
+            padding:0px; 
+            margin:0px;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            color:#f2f2f2;
+            background-color:#1b1b1b;
+            padding-top: 60px;
+        }
+
+        .navbar{
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #333;
+            padding: 10px 0;
+            z-index: 1000;
+            box-shadow:0px 4px 8px rgba(0,0,0,0.3);
+        }
+
+        .navbar ul {
+            list-style-type:none;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+        }
+
+        .navbar ul li {
+            margin: 0 30px;
+        }
+        
+        .navbar ul li a {
+            color:#f2f2f2;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 8px 12px;
+            transition: background-color 0.3s color 0.3s;
+        }
+
+        .navbar ul li a:hover {
+            background-color: #555;
+            color:#fff;
+            border-radius: 4px;
+            
+        }
+
+        h2,h1 {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #e8e8e8;
+        }
+
+        h2{
+            font-size: 2em;
+            color:#c0c0c0;
+            border-bottom: 2px solid #555;
+            display: inline-block;
+            padding-bottom: 5px;
+            margin-top: 10px;
+        }
+
+        section {
+            max-width: 800px;
+            margin:0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .project{
+            margin-bottom: 30px;
+        }
+
+        .project h3{
+            font-size: 1.5em;
+            color:#f2f2f2;
+            margin-bottom: 10px;
+        }
+
+        .project p{
+            font-size: 1.1em;
+            color:#cccccc;
+        }
+
+        .skills{
+            text-align: center;
+            margin-top: 20px
+        }
+
+        .skill-btn{
+            display: inline-block;
+            background-color: #444;
+            color:#fff;
+            padding: 10px 15px;
+            margin: 8px;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: background-color 0.3s, transoform 0.3s;
+            font-size: 1em;
+            text-transform: uppercase;
+
+        }
+
+        .skill-btn:hover{
+            background-color: #666;
+            transform: scale(1.15);
+        }
+
+        .about{
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .about h2{
+            margin-bottom: 10px;
+            font-size: 1.5em;
+            color:#c0c0c0;
+
+        }
+
+        .about p{
+            font-size: 1.1em;
+            color:#cccccc;
+        }
+
+        @media (max-width: 768px){
+            .navbar ul {
+                flex-direction: column;
+                align-items:center;
+            }
+
+            .navbar ul li {
+                margin: 10px 0;
+            }
+
+            h1{
+                font-size: 2em;
+            }
+
+            h2{
+                font-size: 1.5em;
+            }
+
+            .skill-btn{
+                font-size: 0.9em;
+                padding: 8px 12px;
+            }
+        }
+
+        a:hover, .project h3:hover, .skills h2:hover{
+            color:#ddd;
+            transition: color 0.3s;
+        }
+
+        .contact{
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .contact input[type="text"], .contact input[type="email"], .contact textarea{
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #333;
+            color:#fff;
+            border: none;
+            border-radius: 4px;
+        }
+
+        .contact button{
+            padding: 10px 20px;
+            background-color: #555;
+            color:#fff;
+            border:none;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: background-color 0.3s,transform 0.3s;
+        }
+
+        .contact button:hover{
+            background-color: #777;
+            transform: scale(1.1);
+        }
+
+    </style>
+</head>
+<body>
+    
+    <!-- Navbar -->
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home -->
+
+    <section id="home">
+        <h1>Valentin's Portofolio</h1>
+        <h2>Welcome to my portofolio</h2>
+        <p>
+            Discover my skills and projects
+        </p>
+    </section>
+
+    <!-- Sectiunea proiecte -->
+
+    <section id="projects">
+        <h2>
+            My Projects:
+        </h2>
+
+        <div class="project">
+            <h3>Project 1: HTML & CSS Website</h3>
+            <p>This project showcases a simple static website built using HTML and CSS. It includes a responsive design
+            and basic styling</p>
+        </div>
+
+        <div class="project">
+            <h3>Project 2: JavaScript To-Do List</h3>
+            <p>This project showcases a simple to-do list application built using HTML, CSS, and JavaScript. It includes
+            basic functionality such as adding and removing tasks</p>
+        </div>
+
+        <div class="project">
+            <h3>Project 3: React Weather App</h3>
+            <p>This project showcases a weather application built using React. It includes functionality to search for
+            weather information based on a city name</p>
+        </div>
+    </section>
+
+    <!-- Sectiunea Abitilitati -->
+
+    <section id="skills" class="skills">
+        <h2>My Skills:</h2>
+        <div class="skill-btn">HTML</div>
+        <div class="skill-btn">CSS</div>
+        <div class="skill-btn">JavaScript</div>
+        <div class="skill-btn">React</div>
+        <div class="skill-btn">Node.js</div>
+        <div class="skill-btn">MongoDB</div>
+        <div class="skill-btn">Java</div>
+        <div class="skill-btn">C#</div>
+    </section>
+
+    <!-- Sectiunea About -->
+     <section id="about" class="about">
+        <h2>About:</h2>
+        <p>
+            Ma numesc Tonu Valentin, student la Facultatea de Inginerie din Bacău, specializat în Tehnologia Informației,sunt pasionat de
+            tehnologie și dezvoltare software. Aspir să devin full stack developer, iar pentru a-mi îmbunătăți abilitățile,
+            dezvolt aplicații în JavaScrit și caut oportunități de internship pentru a acumula experiență practică în domeniu.
+        </p>
+     </section>
+
+
+    <!-- Sectiunea Contact -->
+
+    <section id="contact" class="contact">
+        <h2>Contact Me</h2>
+        <form action="#" method="post">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" id="message" rows="4" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+</body>
+</html>
