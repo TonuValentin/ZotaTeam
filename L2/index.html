@@ -1,223 +1,343 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"> <!-- Specifică codificarea caracterelor ca UTF-8 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valentin's Portofolio</title>
+    <!-- Face pagina responsivă pe toate dispozitivele -->
+    <title>Valentin's Portofolio</title> <!-- Titlul paginii, afișat în tab-ul browserului -->
     <style>
-
+        /* Resetare de bază pentru margin și padding */
         * {
-            padding:0px; 
-            margin:0px;
+            padding: 0px;
+            /* Elimină padding-ul implicit */
+            margin: 0px;
+            /* Elimină margin-ul implicit */
             box-sizing: border-box;
+            /* Controlează dimensiunea elementului incluzând padding și border */
         }
+
+        /* Stilizare pentru body */
         body {
             font-family: Arial, sans-serif;
-            color:#f2f2f2;
-            background-color:#1b1b1b;
+            /* Setează fontul paginii */
+            color: #f2f2f2;
+            /* Culoarea textului */
+            background-color: #1b1b1b;
+            /* Culoarea de fundal */
             padding-top: 60px;
+            /* Spațiu în partea de sus pentru navbar fix */
         }
 
-        .navbar{
+        /* Stilizare pentru navbar */
+        .navbar {
             position: fixed;
+            /* Navbar-ul rămâne fixat în partea de sus a paginii */
             top: 0;
+            /* Poziționat în partea de sus */
             width: 100%;
+            /* Lățimea navbar-ului ocupă întreaga pagină */
             background-color: #333;
+            /* Culoare de fundal */
             padding: 10px 0;
+            /* Spațiu vertical în navbar */
             z-index: 1000;
-            box-shadow:0px 4px 8px rgba(0,0,0,0.3);
+            /* Prioritate față de alte elemente pentru a rămâne deasupra */
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+            /* Umbra navbar-ului */
         }
 
+        /* Listă de navigare în navbar */
         .navbar ul {
-            list-style-type:none;
+            list-style-type: none;
+            /* Elimină punctele de la elementele listei */
             display: flex;
+            /* Elemente aranjate orizontal */
             justify-content: center;
+            /* Elemente centrate pe orizontală */
             padding: 0;
+            /* Elimină padding-ul implicit */
         }
 
+        /* Elemente individuale din lista navbar */
         .navbar ul li {
             margin: 0 30px;
-        }
-        
-        .navbar ul li a {
-            color:#f2f2f2;
-            text-decoration: none;
-            font-size: 18px;
-            padding: 8px 12px;
-            transition: background-color 0.3s color 0.3s;
+            /* Spațiu între elementele de navigare */
         }
 
+        /* Link-uri de navigare */
+        .navbar ul li a {
+            color: #f2f2f2;
+            /* Culoare text */
+            text-decoration: none;
+            /* Elimină sublinierea link-urilor */
+            font-size: 18px;
+            /* Dimensiunea fontului */
+            padding: 8px 12px;
+            /* Spațiu în jurul textului */
+            transition: background-color 0.3s color 0.3s;
+            /* Tranziție pentru schimbarea culorii */
+        }
+
+        /* Efect hover pentru link-urile de navigare */
         .navbar ul li a:hover {
             background-color: #555;
-            color:#fff;
+            /* Schimbă fundalul la hover */
+            color: #fff;
+            /* Schimbă culoarea textului la hover */
             border-radius: 4px;
-            
+            /* Colțuri rotunjite la hover */
         }
 
-        h2,h1 {
+        /* Stil pentru titluri */
+        h2,
+        h1 {
             text-align: center;
+            /* Centrarea textului */
             margin: 20px 0;
+            /* Spațiu sus și jos */
         }
 
+        /* Stil pentru titlul principal */
         h1 {
             font-size: 2.5em;
+            /* Dimensiune font mare */
             color: #e8e8e8;
+            /* Culoare text */
         }
 
-        h2{
+        /* Stil pentru titlurile de secțiuni */
+        h2 {
             font-size: 2em;
-            color:#c0c0c0;
+            /* Dimensiune font mai mic decât h1 */
+            color: #c0c0c0;
+            /* Culoare text */
             border-bottom: 2px solid #555;
+            /* Linie sub text */
             display: inline-block;
+            /* Linie doar sub text */
             padding-bottom: 5px;
+            /* Spațiu sub text */
             margin-top: 10px;
+            /* Spațiu deasupra textului */
         }
 
+        /* Stilizare pentru secțiuni generale */
         section {
             max-width: 800px;
-            margin:0 auto;
+            /* Lățimea maximă a secțiunii */
+            margin: 0 auto;
+            /* Centrare pe pagină */
             padding: 20px;
+            /* Spațiu interior */
             line-height: 1.6;
+            /* Înălțime linie pentru lizibilitate */
         }
 
-        .project{
+        /* Stilizare pentru secțiunea de proiecte */
+        .project {
             margin-bottom: 30px;
+            /* Spațiu între proiecte */
         }
 
-        .project h3{
+        /* Stilizare pentru titlurile proiectelor */
+        .project h3 {
             font-size: 1.5em;
-            color:#f2f2f2;
+            /* Dimensiune font */
+            color: #f2f2f2;
+            /* Culoare text */
             margin-bottom: 10px;
+            /* Spațiu sub titlu */
         }
 
-        .project p{
+        /* Stilizare pentru descrierea proiectelor */
+        .project p {
             font-size: 1.1em;
-            color:#cccccc;
+            /* Dimensiune font */
+            color: #cccccc;
+            /* Culoare text */
         }
 
-        .skills{
+        /* Secțiunea de abilități */
+        .skills {
             text-align: center;
-            margin-top: 20px
+            /* Centrare text */
+            margin-top: 20px;
+            /* Spațiu deasupra secțiunii */
         }
 
-        .skill-btn{
+        /* Butoane pentru abilități */
+        .skill-btn {
             display: inline-block;
+            /* Aliniere pe orizontală */
             background-color: #444;
-            color:#fff;
+            /* Culoare fundal */
+            color: #fff;
+            /* Culoare text */
             padding: 10px 15px;
+            /* Spațiu interior */
             margin: 8px;
+            /* Spațiu între butoane */
             border-radius: 40px;
+            /* Colțuri rotunjite */
             cursor: pointer;
-            transition: background-color 0.3s, transoform 0.3s;
+            /* Cursor pointer */
+            transition: background-color 0.3s, transform 0.3s;
+            /* Efecte de tranziție */
             font-size: 1em;
+            /* Dimensiune font */
             text-transform: uppercase;
-
+            /* Text cu majuscule */
         }
 
-        .skill-btn:hover{
+        /* Efect hover pentru butoanele de abilități */
+        .skill-btn:hover {
             background-color: #666;
+            /* Schimbare culoare fundal la hover */
             transform: scale(1.15);
+            /* Mărire buton la hover */
         }
 
-        .about{
+        /* Secțiunea "About" */
+        .about {
             text-align: center;
+            /* Text centrat */
             padding: 40px 20px;
+            /* Spațiu interior */
         }
 
-        .about h2{
+        .about h2 {
             margin-bottom: 10px;
+            /* Spațiu sub titlu */
             font-size: 1.5em;
-            color:#c0c0c0;
-
+            /* Dimensiune font */
+            color: #c0c0c0;
+            /* Culoare text */
         }
 
-        .about p{
+        .about p {
             font-size: 1.1em;
-            color:#cccccc;
+            /* Dimensiune font */
+            color: #cccccc;
+            /* Culoare text */
         }
 
-        @media (max-width: 768px){
+        /* Responsivitate pentru ecrane mici */
+        @media (max-width: 768px) {
             .navbar ul {
                 flex-direction: column;
-                align-items:center;
+                /* Elemente verticale pe ecrane mici */
+                align-items: center;
+                /* Aliniere la centru */
             }
 
             .navbar ul li {
                 margin: 10px 0;
+                /* Spațiu între elemente */
             }
 
-            h1{
+            h1 {
                 font-size: 2em;
+                /* Font mai mic */
             }
 
-            h2{
+            h2 {
                 font-size: 1.5em;
+                /* Font mai mic */
             }
 
-            .skill-btn{
+            .skill-btn {
                 font-size: 0.9em;
+                /* Font mai mic */
                 padding: 8px 12px;
+                /* Spațiu interior mai mic */
             }
         }
 
-        a:hover, .project h3:hover, .skills h2:hover{
-            color:#ddd;
+        /* Efecte hover pentru linkuri */
+        a:hover,
+        .project h3:hover,
+        .skills h2:hover {
+            color: #ddd;
+            /* Schimbare culoare text la hover */
             transition: color 0.3s;
+            /* Tranziție culoare */
         }
 
-        .contact{
+        /* Secțiunea de contact */
+        .contact {
             text-align: center;
+            /* Text centrat */
             padding: 40px 20px;
+            /* Spațiu interior */
         }
 
-        .contact input[type="text"], .contact input[type="email"], .contact textarea{
+        .contact input[type="text"],
+        .contact input[type="email"],
+        .contact textarea {
             width: 100%;
+            /* Elemente ocupă întreaga lățime */
             padding: 10px;
+            /* Spațiu interior */
             margin: 10px 0;
+            /* Spațiu exterior */
             background-color: #333;
-            color:#fff;
+            /* Culoare fundal */
+            color: #fff;
+            /* Culoare text */
             border: none;
+            /* Fără bordură */
             border-radius: 4px;
+            /* Colțuri rotunjite */
         }
 
-        .contact button{
+        /* Buton de trimitere */
+        .contact button {
             padding: 10px 20px;
+            /* Spațiu interior */
             background-color: #555;
-            color:#fff;
-            border:none;
+            /* Culoare fundal */
+            color: #fff;
+            /* Culoare text */
+            border: none;
+            /* Fără bordură */
             border-radius: 40px;
+            /* Colțuri rotunjite */
             cursor: pointer;
-            transition: background-color 0.3s,transform 0.3s;
+            /* Cursor pointer */
+            transition: background-color 0.3s, transform 0.3s;
+            /* Tranziții */
         }
 
-        .contact button:hover{
+        /* Efect hover pentru buton */
+        .contact button:hover {
             background-color: #777;
+            /* Schimbare culoare fundal la hover */
             transform: scale(1.1);
+            /* Mărire buton la hover */
         }
-
     </style>
 </head>
 <body>
-    
+
     <!-- Navbar -->
 
     <nav class="navbar">
         <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#home">Home</a></li> <!-- Link către secțiunea Home -->
+            <li><a href="#about">About</a></li> <!-- Link către secțiunea About -->
+            <li><a href="#projects">Projects</a></li> <!-- Link către secțiunea Projects -->
+            <li><a href="#contact">Contact</a></li> <!-- Link către secțiunea Contact -->
         </ul>
     </nav>
 
     <!-- Home -->
 
     <section id="home">
-        <h1>Valentin's Portofolio</h1>
-        <h2>Welcome to my portofolio</h2>
+        <h1>Valentin's Portofolio</h1> <!-- Titlul paginii -->
+        <h2>Welcome to my portofolio</h2> <!-- Subtitlu -->
         <p>
             Discover my skills and projects
-        </p>
+        </p> <!-- Text introductiv -->
     </section>
 
     <!-- Sectiunea proiecte -->
@@ -225,61 +345,68 @@
     <section id="projects">
         <h2>
             My Projects:
-        </h2>
+        </h2> <!-- Titlu secțiune Proiecte -->
 
+        <!-- Primul proiect -->
         <div class="project">
             <h3>Project 1: HTML & CSS Website</h3>
             <p>This project showcases a simple static website built using HTML and CSS. It includes a responsive design
-            and basic styling</p>
+                and basic styling</p>
         </div>
 
+        <!-- Al doilea proiect -->
         <div class="project">
             <h3>Project 2: JavaScript To-Do List</h3>
             <p>This project showcases a simple to-do list application built using HTML, CSS, and JavaScript. It includes
-            basic functionality such as adding and removing tasks</p>
+                basic functionality such as adding and removing tasks</p>
         </div>
 
+        <!-- Al treilea proiect -->
         <div class="project">
             <h3>Project 3: React Weather App</h3>
             <p>This project showcases a weather application built using React. It includes functionality to search for
-            weather information based on a city name</p>
+                weather information based on a city name</p>
         </div>
     </section>
 
-    <!-- Sectiunea Abitilitati -->
+    <!-- Sectiunea Abilități -->
 
     <section id="skills" class="skills">
-        <h2>My Skills:</h2>
-        <div class="skill-btn">HTML</div>
-        <div class="skill-btn">CSS</div>
-        <div class="skill-btn">JavaScript</div>
-        <div class="skill-btn">React</div>
-        <div class="skill-btn">Node.js</div>
-        <div class="skill-btn">MongoDB</div>
-        <div class="skill-btn">Java</div>
-        <div class="skill-btn">C#</div>
+        <h2>My Skills:</h2> <!-- Titlu secțiune Abilități -->
+        <div class="skill-btn">HTML</div> <!-- Abilitate HTML -->
+        <div class="skill-btn">CSS</div> <!-- Abilitate CSS -->
+        <div class="skill-btn">JavaScript</div> <!-- Abilitate JavaScript -->
+        <div class="skill-btn">React</div> <!-- Abilitate React -->
+        <div class="skill-btn">Node.js</div> <!-- Abilitate Node.js -->
+        <div class="skill-btn">MongoDB</div> <!-- Abilitate MongoDB -->
+        <div class="skill-btn">Java</div> <!-- Abilitate Java -->
+        <div class="skill-btn">C#</div> <!-- Abilitate C# -->
     </section>
 
     <!-- Sectiunea About -->
-     <section id="about" class="about">
-        <h2>About:</h2>
-        <p>
-            Ma numesc Tonu Valentin, student la Facultatea de Inginerie din Bacău, specializat în Tehnologia Informației,sunt pasionat de
-            tehnologie și dezvoltare software. Aspir să devin full stack developer, iar pentru a-mi îmbunătăți abilitățile,
-            dezvolt aplicații în JavaScrit și caut oportunități de internship pentru a acumula experiență practică în domeniu.
-        </p>
-     </section>
 
+    <section id="about" class="about">
+        <h2>About:</h2> <!-- Titlu secțiune Despre -->
+        <p>
+            Ma numesc Tonu Valentin, student la Facultatea de Inginerie din Bacău, specializat în Tehnologia
+            Informației, sunt pasionat de
+            tehnologie și dezvoltare software. Aspir să devin full stack developer, iar pentru a-mi îmbunătăți
+            abilitățile,
+            dezvolt aplicații în JavaScript și caut oportunități de internship pentru a acumula experiență practică în
+            domeniu.
+        </p>
+    </section>
 
     <!-- Sectiunea Contact -->
 
     <section id="contact" class="contact">
-        <h2>Contact Me</h2>
-        <form action="#" method="post">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
+        <h2>Contact Me</h2> <!-- Titlu secțiune Contact -->
+        <form action="#" method="post"> <!-- Formular de contact -->
+            <input type="text" name="name" placeholder="Your Name" required> <!-- Câmp pentru nume -->
+            <input type="email" name="email" placeholder="Your Email" required> <!-- Câmp pentru email -->
             <textarea name="message" id="message" rows="4" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
+            <!-- Câmp pentru mesaj -->
+            <button type="submit">Send Message</button> <!-- Buton de trimitere -->
         </form>
     </section>
 </body>
