@@ -122,22 +122,15 @@ p{
 }
 
 
-
-
-
-
-
-/* Etichetele pentru fiecare câmp */
 form label {
     font-size: 18px;
     color: #333;
     margin-bottom: 5px;
     display: block;
     text-align: left;
-    color: black; /* Dacă preferi etichetele aliniate la stânga */
+    color: black; 
 }
 
-/* Câmpurile de introducere */
 form input[type="text"],
 form input[type="email"],
 form textarea {
@@ -151,13 +144,11 @@ form textarea {
     transition: border-color 0.3s;
 }
 
-/* Stil pentru textarea */
 form textarea {
     resize: vertical;
     min-height: 100px;
 }
 
-/* Efect de hover pentru câmpuri */
 form input[type="text"]:focus,
 form input[type="email"]:focus,
 form textarea:focus {
@@ -165,7 +156,7 @@ form textarea:focus {
     outline: none;
 }
 
-/* Stil pentru butonul de trimitere */
+
 form button[type="submit"] {
     width: 20%;
     padding: 10px;
@@ -179,7 +170,12 @@ form button[type="submit"] {
     transition: background-color 0.3s;
 }
 
-/* Efect de hover pentru buton */
+
 form button[type="submit"]:hover {
     background-color: #444;
+}
+
+.salut1 {
+    text-align: center;
+    padding: 10px;
 }
